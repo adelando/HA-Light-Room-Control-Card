@@ -1,0 +1,8 @@
+{
+  "name": "Room Light Card",
+  "description": "A custom Lovelace card for controlling light groups with per-light fine controls, colour temperature, RGB swatches, and scroll or chevron overflow.",
+  "render_readme": true,
+  "homeassistant": "2023.1.0",
+  "documentation": "https://github.com/adelando/HA-Light-Room-Control-Card",
+  "issues": "https://github.com/adelando/HA-Light-Room-Control-Card/issues"
+}
