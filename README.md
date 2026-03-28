@@ -1,19 +1,30 @@
 # Room Light Card
 
 A custom [Home Assistant](https://www.home-assistant.io/) Lovelace card for controlling light groups with individual per-light fine controls, colour temperature, RGB colour swatches, and configurable scroll or chevron overflow handling.
-
+![CARD](https://i.imgur.com/gosmUfF.jpeg)
 -----
 
 ## Features
 
-- **Master toggle button** — tap to open group-wide fine controls, long-press to toggle all lights on/off
-- **Individual light buttons** — tap to open per-light controls, long-press to toggle that light
-- **Per-light fine controls** — brightness slider, colour temperature slider, Warm/Soft/Cool presets, and RGB colour swatches
-- **Dynamic temperature slider** — switches to a rainbow gradient when an RGB colour is selected, reverts to warm-to-cool when a temperature preset is chosen
-- **Scroll overflow** — horizontal scrolling row with fade edge indicators
-- **Chevron overflow** — paginated view with prev/next arrows and a page indicator pill
+- **Master toggle button** —
+  - Tap/click to open group-wide fine controls,
+  - Long-press to toggle all lights on/off
+- **Individual light buttons** —
+  - Tap/click to open per-light controls,
+  - Long-press to toggle that light
+- **Per-light fine controls**
+  — Brightness slider,
+  - colour temperature slider,
+  - Warm/Soft/Cool presets, and
+  - RGB colour swatches
+- **Dynamic temperature slider** —
+  - switches to a rainbow gradient when an RGB colour is selected, reverts to warm-to-cool when a temperature preset is chosen
+- **Individual light card overflow**
+  - Scrolling overflow — horizontal scrolling row with fade edge indicators
+  - Chevron overflow — paginated view with prev/next arrows and a page indicator pill
 - **Fully themeable** — configure card background, button colours, icon colours, and text colours
-- **MDI icon support** — any `mdi:` icon for the master button and individual light buttons
+- **MDI icon support**
+  — any `mdi:` icon for the master button and individual light buttons
 - **Per-light icon overrides** — give each light its own icon
 - **Works with all light types** — colour temp only, RGB, RGBWW, and brightness-only bulbs
 
@@ -46,24 +57,25 @@ A custom [Home Assistant](https://www.home-assistant.io/) Lovelace card for cont
 ## Configuration
 
 Add a **Manual card** to your dashboard with the following YAML:
+![Card](https://i.imgur.com/XEKzj9f.jpeg)
 
 ```yaml
 type: custom:room-light-card
 name: Side Lights
-master_entity: light.side_lights_group
+master_entity: light.side_deck_group
 lights:
-  - entity: light.side_light_1
-    name: Left
-  - entity: light.side_light_2
-    name: Right
+  - entity: light.side_1
+    name: Light 1
+  - entity: light.side_2
+    name: Light 2
 ```
 
 ### Full example
-
+![Example2](https://i.imgur.com/3bpGJor.jpeg)
 ```yaml
 type: custom:room-light-card
-name: Side Lights
-master_entity: light.side_yard
+name: Front Lights
+master_entity: light.front_yard_group
 master_icon: mdi:power
 light_icon: mdi:lightbulb
 icon_color_on: "#1a1a1a"
@@ -76,17 +88,23 @@ text_secondary: "#666666"
 overflow: chevron
 page_size: 4
 lights:
-  - entity: light.side_1
-    name: Side 1
-    icon: mdi:floor-lamp
-  - entity: light.side_2
-    name: Side 2
-    icon: mdi:floor-lamp
   - entity: light.front_1
     name: Front 1
     icon: mdi:outdoor-lamp
   - entity: light.front_2
     name: Front 2
+    icon: mdi:outdoor-lamp
+  - entity: light.front_3
+    name: Front 3
+    icon: mdi:outdoor-lamp
+  - entity: light.front_4
+    name: Front 4
+    icon: mdi:outdoor-lamp
+  - entity: light.front_5
+    name: Front 5
+    icon: mdi:outdoor-lamp
+  - entity: light.front_lights
+    name: All Front
     icon: mdi:outdoor-lamp
 ```
 
